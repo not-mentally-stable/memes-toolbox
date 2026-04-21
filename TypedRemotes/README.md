@@ -12,7 +12,7 @@ Http.HttpEnabled = true
 
 local Module = Instance.new("ModuleScript", Selection:Get()[1] or game:GetService("ReplicatedStorage"))
 Module.Name = "TypedRemotes"
-Module.Source = Http:GetAsync("https://raw.githubusercontent.com/not-mentally-stable/memes-toolbox/blob/main/TypedRemotes/TypedRemote.luau")
+Module.Source = Http:GetAsync("https://raw.githubusercontent.com/not-mentally-stable/memes-toolbox/refs/heads/main/TypedRemotes/TypedRemote.luau")
 Selection:Set({Module})
 ```
 3. Require it then enjoy!
@@ -39,7 +39,6 @@ When a client fires a remote:
 4. If all checks pass, your callback runs safely
 
 ## Example Templates
-
 Single Argument
 ```Luau
 TypedRemotes:Create(remote, "number", function(player, value)
@@ -64,8 +63,6 @@ end)
 ```
 
 > [!WARNING]
-> Argument count must match or exceed expected types
-> 
-> invalid calls fail silently (no errors thrown)
-> 
-> This is not a replacement for full server-side validation, but a strong first layer
+> - Argument count must match or exceed expected types
+> - invalid calls fail silently (no errors thrown)
+> - This is not a replacement for full server-side validation, but a strong first layer
