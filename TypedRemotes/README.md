@@ -47,7 +47,7 @@ TypedRemotes:Create(remote, "number", function(player, value)
 end)
 ```
 
-Multiple Arguments
+Multiple Arguments (you can put as much as you want)
 ```Luau
 TypedRemotes:Create(remote, "string", "Vector3", "boolean", function(player, name, position, isActive)
 	print(name, position, isActive)
@@ -65,5 +65,7 @@ end)
 
 > [!WARNING]
 > Argument count must match or exceed expected types
+> 
 > invalid calls fail silently (no errors thrown)
+> 
 > This is not a replacement for full server-side validation, but a strong first layer
