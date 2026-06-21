@@ -6,7 +6,18 @@ it follows this [console api](https://developer.mozilla.org/en-US/docs/Web/API/c
 1. open roblox studio
 2. execute this script in the **commandbar** (you may get a warning just ignore)
 ```Luau
--- not done
+local Http = game:GetService("HttpService")
+local Selection = game:GetService("Selection")
+Http.HttpEnabled = true
+
+local ConsoleModule = Instance.new("ModuleScript", Selection:Get()[1] or game:GetService("ReplicatedStorage"))
+local ObjectModule = Instance.new("ModuleScript", ConsoleModule)
+ConsoleModule.Name = "console"
+ObjectModule.Name = "ObjectInfo"
+
+ConsoleModule.Source = Http:GetAsync("https://raw.githubusercontent.com/not-mentally-stable/memes-toolbox/refs/heads/main/LuauConsole/console.luau")
+ObjectModule.Source = Http:GetAsync("https://raw.githubusercontent.com/not-mentally-stable/memes-toolbox/refs/heads/main/LuauConsole/ObjectInfo.luau")
+Selection:Set({ConsoleModule})
 ```
 3. then enjoy!
 
